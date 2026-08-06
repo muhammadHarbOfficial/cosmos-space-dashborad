@@ -104,8 +104,8 @@ function showCurrentLaunch() {
     document.querySelector('#featured-launch #launch-mission-description').innerHTML = launchesData.results[0].mission.description
     document.querySelector('#featured-launch #launch-img').appendChild(imgLaunch)
     imgLaunch.addEventListener('error', _ => {
-      imgLaunch.style.display = 'none';
-      imgLaunch.parentElement.querySelector('i').classList.remove('hidden')
+      imgLaunch.src = './assets/images/launch-placeholder.png'
+      imgLaunch.parentElement.querySelector('i').classList.add('hidden')
     })
 }
 
@@ -182,8 +182,7 @@ function showAllUpcomingLaunches() {
     let images = launchesCards.querySelectorAll('img');
     images.forEach(img => {
       img.addEventListener('error', () => {
-        img.style.display = 'none';
-        img.parentElement.querySelector('i').classList.remove('hidden')
+        img.src = './assets/images/launch-placeholder.png'
       })
       
     })
